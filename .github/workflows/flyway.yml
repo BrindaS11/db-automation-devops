@@ -17,8 +17,8 @@ jobs:
           sudo apt update
           sudo apt install -y postgresql postgresql-contrib
           sudo service postgresql start
-          psql -U postgres -c "CREATE DATABASE mydb;"
-          psql -U postgres -c "ALTER USER postgres PASSWORD 'Devops16';"
+          psql -U postgres -c "CREATE DATABASE postgres;"
+          psql -U postgres -c "ALTER USER postgres PASSWORD 'brinda16';"
 
       - name: Install Flyway
         run: |
@@ -27,5 +27,5 @@ jobs:
 
       - name: Run Flyway Migrations
         run: |
-          flyway -url=jdbc:postgresql://localhost:5432/mydb -user=postgres -password=Devops16 migrate
+          flyway -url=jdbc:postgresql://localhost:5432/postgres -user=postgres -password=brinda16 migrate
 
